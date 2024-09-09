@@ -1,0 +1,29 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int reverseNumber(int x) {
+    int reversed = 0;
+
+    while (x > 0) {
+        int digit = x % 10;       // Get the last digit of x
+        reversed = reversed * 10 + digit; // Append digit to the reversed number
+        x /= 10;                  // Remove the last digit from x
+    }
+    
+    return reversed;
+}
+
+int main() {
+    int x;
+    
+    // Input from the user
+    cin >> x;
+    
+    // Output the reversed number
+    cout << reverseNumber(x) << endl;
+    
+    return 0;
+}
